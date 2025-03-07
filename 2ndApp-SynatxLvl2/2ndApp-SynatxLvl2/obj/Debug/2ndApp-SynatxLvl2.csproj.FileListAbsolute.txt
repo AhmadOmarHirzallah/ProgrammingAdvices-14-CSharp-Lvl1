@@ -1,0 +1,7 @@
+E:\ProgrammingAdvices(Courses14-25)\ProgrammingAdvices-14-C#Lvl1\2ndApp-SynatxLvl2\2ndApp-SynatxLvl2\bin\Debug\2ndApp-SynatxLvl2.exe.config
+E:\ProgrammingAdvices(Courses14-25)\ProgrammingAdvices-14-C#Lvl1\2ndApp-SynatxLvl2\2ndApp-SynatxLvl2\bin\Debug\2ndApp-SynatxLvl2.exe
+E:\ProgrammingAdvices(Courses14-25)\ProgrammingAdvices-14-C#Lvl1\2ndApp-SynatxLvl2\2ndApp-SynatxLvl2\bin\Debug\2ndApp-SynatxLvl2.pdb
+E:\ProgrammingAdvices(Courses14-25)\ProgrammingAdvices-14-C#Lvl1\2ndApp-SynatxLvl2\2ndApp-SynatxLvl2\obj\Debug\2ndApp-SynatxLvl2.csproj.AssemblyReference.cache
+E:\ProgrammingAdvices(Courses14-25)\ProgrammingAdvices-14-C#Lvl1\2ndApp-SynatxLvl2\2ndApp-SynatxLvl2\obj\Debug\2ndApp-SynatxLvl2.csproj.CoreCompileInputs.cache
+E:\ProgrammingAdvices(Courses14-25)\ProgrammingAdvices-14-C#Lvl1\2ndApp-SynatxLvl2\2ndApp-SynatxLvl2\obj\Debug\2ndApp-SynatxLvl2.exe
+E:\ProgrammingAdvices(Courses14-25)\ProgrammingAdvices-14-C#Lvl1\2ndApp-SynatxLvl2\2ndApp-SynatxLvl2\obj\Debug\2ndApp-SynatxLvl2.pdb
