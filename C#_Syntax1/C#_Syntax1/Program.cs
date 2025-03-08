@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Runtime.CompilerServices;   // Like C++ :  #include ....
 
-// Namespaces are a group/collection of code !
-namespace FirstApplication  
+namespace C__Syntax1
 {
-    // This is the class name; (Which can be named as you want);; there is also OOP Rules ; (internal keyword is to say this is accessable in this file only
-    class Program  
+    class Program
     {
         static void Main(string[] args)
         {
@@ -14,19 +11,17 @@ namespace FirstApplication
 
 
 
-
-
             Console.WriteLine("\n\nHello Guys;");
             Console.WriteLine("My name is Ahmad");
             Console.WriteLine("I am learning C#");
             Console.WriteLine("The sum of 10 + 20 is  =  " + 10 + 20);
             Console.WriteLine("The sum of (10 + 20) is  =  " + (10 + 20));
-            
+
 
             Console.Write("Hello");
             Console.Write("Hello;; No new line :)");
             Console.Write("Yes you can see this :(");
-            
+
 
 
             // Formatting the Strings (Formatted String)
@@ -39,7 +34,7 @@ namespace FirstApplication
             Console.WriteLine("Usefull Escape Characters:\n\n");
 
 
-            Console.WriteLine("\\n:\tWelcome to\n\"Learning C# Journey\"\n\n"); 
+            Console.WriteLine("\\n:\tWelcome to\n\"Learning C# Journey\"\n\n");
             Console.WriteLine("\\t:\tWelcome\t\tTo This Nice\t\t\tJoruney");
             Console.WriteLine("\\b:\tWelcome To\bProgrammingAdvices");
             Console.WriteLine("\\b:\tWelcome To \bProgrammingAdvices");
@@ -47,7 +42,7 @@ namespace FirstApplication
             Console.WriteLine("\\':\t\'Ahmad\'");
             Console.WriteLine("\\\":\t\"Ahmad\"");
             Console.WriteLine("\\\\:\t\\");
-            Console.WriteLine("\\\\ multiple times; but notice it should be even number of \\ (14) in our case; or it's syntax error! :\t \\\\\\\\\\\\\\"); 
+            Console.WriteLine("\\\\ multiple times; but notice it should be even number of \\ (14) in our case; or it's syntax error! :\t \\\\\\\\\\\\\\");
             Console.WriteLine("\\a:(Alerting)\t:\a");
 
 
@@ -149,12 +144,12 @@ namespace FirstApplication
 
 
             float Nbr3 = 1012393129.123F;
-            System.Single asNbr3= 1012393129.123F;
+            System.Single asNbr3 = 1012393129.123F;
             if (Nbr3 == asNbr3)
                 Console.WriteLine("Both Datatypes are the same (float = System.Single)!");
 
             double Nbr4 = 1012393129.123F;
-            System.Double asNbr4= 1012393129.123F;
+            System.Double asNbr4 = 1012393129.123F;
             if (Nbr4 == asNbr4)
                 Console.WriteLine("Both Datatypes are the same (double = System.Double)!");
 
@@ -166,7 +161,7 @@ namespace FirstApplication
 
             char myChar = 'A';  // This is 2 bytes
             System.Char asMyChar = 'A';
-            if (myChar== asMyChar)
+            if (myChar == asMyChar)
                 Console.WriteLine("Both Datatypes are the same (char = System.Char)!");
 
             byte myByte = 50; // Range from 0 to 255 (Yes byte is unsigned)
@@ -196,14 +191,14 @@ namespace FirstApplication
             Console.WriteLine("\nByte:");
             Console.WriteLine("Min={0} , Max={1}", Byte.MinValue, Byte.MaxValue);
 
-            
+
             Console.WriteLine("\nSByte:");
-            Console.WriteLine("Min={0} , Max={1}",SByte.MinValue, SByte.MaxValue);
-           
+            Console.WriteLine("Min={0} , Max={1}", SByte.MinValue, SByte.MaxValue);
+
             //Short
             short s1 = -32768;
             short s2 = 32767;
-           // short s3 = 35000;//Compile-time error: Constant value '35000' cannot be converted to a 'short'
+            // short s3 = 35000;//Compile-time error: Constant value '35000' cannot be converted to a 'short'
 
             ushort us1 = 65535;
             //  ushort us2 = -32000; //Compile-time error: Constant value '-32000' cannot be converted to a 'ushort'
@@ -217,14 +212,14 @@ namespace FirstApplication
             //int
             int i = -2147483648;
             int j = 2147483647;
-          //  int k = 4294967295; //Compile-time error: Cannot implicitly convert type 'uint' to 'int'.
+            //  int k = 4294967295; //Compile-time error: Cannot implicitly convert type 'uint' to 'int'.
 
             uint ui1 = 4294967295;
             // uint ui2 = -1; //Compile-time error: Constant value '-1' cannot be converted to a 'uint'
 
             Console.WriteLine("\nInt:");
             Console.WriteLine("Min={0} , Max={1}", Int32.MinValue, Int32.MaxValue);
-            
+
             Console.WriteLine("\nUInt:");
             Console.WriteLine("Min={0} , Max={1}", UInt32.MinValue, UInt32.MaxValue);
 
@@ -249,7 +244,7 @@ namespace FirstApplication
             Console.WriteLine("\nFloat:");
             Console.WriteLine("Min={0} , Max={1}", Single.MinValue, Single.MaxValue);
             //Console.WriteLine("Min={0} , Max={1}", float.MinValue, float.MaxValue);
-          
+
 
             //double
             double d1 = 12345678912345.5d;
@@ -298,7 +293,6 @@ namespace FirstApplication
             Console.WriteLine("12345e-5d = {0}", e_try);
             e_try = 12345e-6d;
             Console.WriteLine("12345e-6d = {0}", e_try);
-
 
 
 

@@ -1,8 +1,9 @@
-# Ignore Visual Studio cache
+# Ignore Visual Studio cache and temp files
 .vs/
+bin/
+obj/
 *.suo
 *.user
 *.db
 *.cache
 *.vsidx
-

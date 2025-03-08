@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E925E0DA-10CF-4AC9-986B-A4BABBC21D06}</ProjectGuid>
+    <ProjectGuid>{53211267-4DB4-438E-ACA9-72DC0793DD37}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_2ndApp_SynatxLvl2</RootNamespace>
-    <AssemblyName>2ndApp-SynatxLvl2</AssemblyName>
+    <RootNamespace>C__Syntax1</RootNamespace>
+    <AssemblyName>C#_Syntax1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

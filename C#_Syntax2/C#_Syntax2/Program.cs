@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace _2ndApp_SynatxLvl2
+namespace C__Syntax2
 {
     class Program
     {
@@ -134,7 +129,7 @@ namespace _2ndApp_SynatxLvl2
 
             //  Nullable<int> can be assigned any value
             //  from -2147483648 to 2147483647, or a null value.
-            
+
             Nullable<int> nullableInteger = null;
             Console.WriteLine("\n\nThe Nullable as <t> = <i> variable result as (null) is : ({0})", nullableInteger);
             nullableInteger = Int32.MaxValue;
@@ -155,8 +150,8 @@ namespace _2ndApp_SynatxLvl2
              *      - In C#, an anonymous type is a type (class) without any name
              *          that can contain public read-only properties only.
              *      - It cannot contain other members, such as fields, methods, events, etc.
-            */ 
-            
+            */
+
             var student = new { Id = 20, FirstName = "Mohammed", LastName = "Abu-Hadhoud" };
             Console.WriteLine("\n\n\nC# - Anonymous Type:\n");
             Console.WriteLine(student.Id); //output: 20
@@ -234,7 +229,7 @@ namespace _2ndApp_SynatxLvl2
                 Console.WriteLine("StudentObj2.Firstname == null is false");
             StudentObj2.Firstname = "Mohammad";
             StudentObj2.Lastname = "Abu-Hadhoud";
-            
+
             Console.WriteLine("\nThe Structure with (new) values After Intialization are: {0} {1}\n", StudentObj2.Firstname, StudentObj2.Lastname);
             if (StudentObj2.Firstname == null)
                 Console.WriteLine("StudentObj2.Firstname == null is true");
@@ -428,7 +423,7 @@ namespace _2ndApp_SynatxLvl2
             //  - When does the date change?
             //      - If the time addition crosses midnight, the date automatically increments.
 
-            DateTime dtTmp= new DateTime(2025, 3, 7, 23, 30, 0); // 11:30 PM
+            DateTime dtTmp = new DateTime(2025, 3, 7, 23, 30, 0); // 11:30 PM
             TimeSpan span2 = new TimeSpan(2, 0, 0);             // Add 2 hours
             DateTime newDate5 = dtTmp.Add(span2);
             Console.WriteLine("\nOriginal Date (Unchanged): " + dtTmp);
@@ -563,26 +558,7 @@ namespace _2ndApp_SynatxLvl2
             else
                 Console.WriteLine($"{Datestr4} is not a valid date string");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
     }
+
 }

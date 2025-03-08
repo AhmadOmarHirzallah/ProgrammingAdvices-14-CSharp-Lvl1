@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{31870147-038D-4EDA-B4F0-AE96CA5A10A7}</ProjectGuid>
+    <ProjectGuid>{DE980D15-1031-42D8-A5E1-D1479CEB8DB7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>FirstApplication</RootNamespace>
-    <AssemblyName>FirstApplication</AssemblyName>
+    <RootNamespace>C__Syntax3</RootNamespace>
+    <AssemblyName>C#_Syntax3</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

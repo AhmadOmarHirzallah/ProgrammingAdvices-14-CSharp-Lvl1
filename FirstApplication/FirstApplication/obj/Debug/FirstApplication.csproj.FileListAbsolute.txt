@@ -1,7 +1,0 @@
-E:\ProgrammingAdvices(Courses14-25)\ProgrammingAdvices-14-C#Lvl1\FirstApplication\FirstApplication\bin\Debug\FirstApplication.exe.config
-E:\ProgrammingAdvices(Courses14-25)\ProgrammingAdvices-14-C#Lvl1\FirstApplication\FirstApplication\bin\Debug\FirstApplication.exe
-E:\ProgrammingAdvices(Courses14-25)\ProgrammingAdvices-14-C#Lvl1\FirstApplication\FirstApplication\bin\Debug\FirstApplication.pdb
-E:\ProgrammingAdvices(Courses14-25)\ProgrammingAdvices-14-C#Lvl1\FirstApplication\FirstApplication\obj\Debug\FirstApplication.csproj.AssemblyReference.cache
-E:\ProgrammingAdvices(Courses14-25)\ProgrammingAdvices-14-C#Lvl1\FirstApplication\FirstApplication\obj\Debug\FirstApplication.csproj.CoreCompileInputs.cache
-E:\ProgrammingAdvices(Courses14-25)\ProgrammingAdvices-14-C#Lvl1\FirstApplication\FirstApplication\obj\Debug\FirstApplication.exe
-E:\ProgrammingAdvices(Courses14-25)\ProgrammingAdvices-14-C#Lvl1\FirstApplication\FirstApplication\obj\Debug\FirstApplication.pdb
