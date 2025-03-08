@@ -921,7 +921,7 @@ namespace C__Syntax3
             Random rand = new Random();
             Console.WriteLine("Generating a nbr which (nbr >= 10 & nbr < 20):");
             for (int i = 0; i < 30; i++)
-                Console.Write("{0}\t", rand.Next(10,20));
+                Console.Write("{0}\t", rand.Next(10,20));   // returns random integers >= 10 and < 20
 
 
 
