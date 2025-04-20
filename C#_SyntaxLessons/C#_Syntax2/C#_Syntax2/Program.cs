@@ -73,8 +73,7 @@ namespace C__Syntax2
             bool b3;
             char c3;
 
-            // - Compiler Error in below:
-
+            // - Compiler will rise an error in below:
             //Console.WriteLine("\n\n(int)i3: {0}\t (float)f3: {1}\t (decimal)d3: {2}", i3, f3, d3);
             //Console.WriteLine("(bool)i3: {0}\t (char)f3: {1}", b3, c3);
 
@@ -130,12 +129,12 @@ namespace C__Syntax2
             //  Nullable<int> can be assigned any value
             //  from -2147483648 to 2147483647, or a null value.
 
-            Nullable<int> nullableInteger = null;
-            Console.WriteLine("\n\nThe Nullable as <t> = <i> variable result as (null) is : ({0})", nullableInteger);
-            nullableInteger = Int32.MaxValue;
-            Console.WriteLine("The Nullable varaible value: ({0})", nullableInteger);
-            nullableInteger = Int32.MinValue;
-            Console.WriteLine("The Nullable varaible value: ({0})", nullableInteger);
+            Nullable<int> nullableInteger = null, nullableInt2, nullableInt3 = null;
+            Console.WriteLine("\n\nThe Nullable as <T> = <int> variable initialized to (null) result is : ({0})", nullableInteger); // Prints->  ()
+            nullableInteger = int.MaxValue;
+            Console.WriteLine("The Nullable varaible value become: ({0})", nullableInteger);
+            nullableInteger = int.MinValue;
+            Console.WriteLine("The Nullable varaible value become: ({0})", nullableInteger);
 
 
 
@@ -149,7 +148,7 @@ namespace C__Syntax2
              * C# - Anonymous Type
              *      - In C#, an anonymous type is a type (class) without any name
              *          that can contain public read-only properties only.
-             *      - It cannot contain other members, such as fields, methods, events, etc.
+             *      - It CANNOT contain other members, such as fields, methods, events, etc.
             */
 
             var student = new { Id = 20, FirstName = "Mohammed", LastName = "Abu-Hadhoud" };
@@ -164,8 +163,8 @@ namespace C__Syntax2
 
             //  - anonymous types are read-only
             //  - you cannot change the values of properties as they are read-only. 
-            //student.Id = 2;   //Error: cannot chage value
-            //student.FirstName = "Ali";    //Error: cannot chage value
+            //student.Id = 2;   //Error: cannot change value
+            //student.FirstName = "Ali";    //Error: cannot change value
 
 
 
@@ -183,6 +182,7 @@ namespace C__Syntax2
             Console.WriteLine(studentAnonymousType.FirstName);
             Console.WriteLine(studentAnonymousType.LastName);
             Console.WriteLine(studentAnonymousType.Address);
+            Console.WriteLine("\nReprinting Address but using properties:"); 
             Console.WriteLine(studentAnonymousType.Address.Id);
             Console.WriteLine(studentAnonymousType.Address.City);
             Console.WriteLine(studentAnonymousType.Address.County);
@@ -199,7 +199,7 @@ namespace C__Syntax2
 
             /*
              * C# - Struct
-             *      - In C#, struct is the value type data type that represents data structures.
+             *      - In C#, struct is a value type data type that represents data structures.
              *      - struct can be used to hold small data values that do not require inheritance;;
              *              - e.g. coordinate points, key-value pairs, and complex data structure.
              *      - A struct object can be created with or without the new operator, same as primitive type variables.
@@ -213,15 +213,25 @@ namespace C__Syntax2
 
             //A struct object can be created with or without the new operator,
             //same as primitive type variables.
+            Console.WriteLine("\n\n\nStructure (struct):\n");
 
             s_Student StudentObj;
             s_Student StudentObj2 = new s_Student();
 
+
+            s_Student StudentObj3 = new s_Student()
+            {
+                Firstname = "Sara",
+                Lastname = "Ali"
+            }; 
+            Console.WriteLine($"\n\nStudent: First Name: {StudentObj3.Firstname}\tLast Name: {StudentObj3.Lastname}");
+
             StudentObj.Firstname = "Ahmad";
             StudentObj.Lastname = "Hirzallah";
-            Console.WriteLine("\n\n\nStructure (struct):\n");
             Console.WriteLine("Full Name using struct properties: {0} {1}", StudentObj.Firstname, StudentObj.Lastname);
+            Console.WriteLine($"Full name using Struct Props: {StudentObj.Firstname} And Lastname: {StudentObj.Lastname}");
 
+            Console.WriteLine($"The Structure with (new) values are: FirstName: {StudentObj2.Firstname} LastName: {StudentObj2.Lastname}\n");
             Console.WriteLine("The Structure with (new) values are: {0} {1}\n", StudentObj2.Firstname, StudentObj2.Lastname);
             if (StudentObj2.Firstname == null)
                 Console.WriteLine("StudentObj2.Firstname == null is true");
@@ -229,7 +239,7 @@ namespace C__Syntax2
                 Console.WriteLine("StudentObj2.Firstname == null is false");
             StudentObj2.Firstname = "Mohammad";
             StudentObj2.Lastname = "Abu-Hadhoud";
-
+            Console.WriteLine($"\nThe Structure with (new) values After Intialization are: FirstName: {StudentObj2.Firstname} Lastname: {StudentObj2.Lastname}\n");
             Console.WriteLine("\nThe Structure with (new) values After Intialization are: {0} {1}\n", StudentObj2.Firstname, StudentObj2.Lastname);
             if (StudentObj2.Firstname == null)
                 Console.WriteLine("StudentObj2.Firstname == null is true");
@@ -253,24 +263,38 @@ namespace C__Syntax2
 
             dynamic myDynamicVar = 100;
             Console.WriteLine("\n\n\nDynamic Types variable as (dynamic myVar;)\n");
-            Console.WriteLine("Value: {0}, Type: {1}", myDynamicVar, myDynamicVar.GetType());
+            //Console.WriteLine("Value: {0}, Type: {1}", myDynamicVar, myDynamicVar.GetType());
+            Console.WriteLine($"Value: {myDynamicVar}, Type: {myDynamicVar.GetType()}");
             myDynamicVar = "Ahmad Hirzallah Studying Programming Advices";
             Console.WriteLine("Value: {0}, Type: {1}", myDynamicVar, myDynamicVar.GetType());
+            Console.WriteLine($"Value: {myDynamicVar}, Type: {myDynamicVar.GetType()}");
             if (myDynamicVar.GetType() == typeof(string))
                 Console.WriteLine("True!\tType is String.");
+            //if (myDynamicVar.GetType() == string)     // ERROR Can't do this.
+                //Console.WriteLine("True!\tType is String.");
             myDynamicVar = true;
             Console.WriteLine("Value: {0}, Type: {1}", myDynamicVar, myDynamicVar.GetType());
+            myDynamicVar = false;
+            Console.WriteLine($"Value: {myDynamicVar}, Type: {myDynamicVar.GetType()}");
             if (myDynamicVar is int)
                 Console.WriteLine("True!\tType is int.");
             else
                 Console.WriteLine("False!\tType ISNOT int; it is {0}.", myDynamicVar.GetType());
 
+            if (myDynamicVar is bool)
+                Console.WriteLine("True!\tType is bool.");
+            else
+                Console.WriteLine("False!\tType isn't bool.");
+
             myDynamicVar = DateTime.Now;
             Console.WriteLine("Value: {0}, Type: {1}", myDynamicVar, myDynamicVar.GetType());
+            Console.WriteLine($"Value: {myDynamicVar}, Type: {myDynamicVar.GetType()}");
             if (myDynamicVar.GetType() == typeof(DateTime))
                 Console.WriteLine("True!\tType is DateTime.");
             else
                 Console.WriteLine("False!\tType ISNOT DateTime; it is {0}.", myDynamicVar.GetType());
+            if (myDynamicVar is DateTime)
+                Console.WriteLine("Yea again :).");
 
 
 
@@ -282,7 +306,7 @@ namespace C__Syntax2
 
             /*
              * Working with Date and Time in C#
-             *      - C# includes DateTime struct to work with dates and times.
+             *      - C# includes DateTime `struct` to work with dates and times.
              *      - To work with date and time in C#, create an object of the DateTime struct using the new keyword.
              *      - The following creates a DateTime object with the default value.
              *          - DateTime dt = new DateTime(); // assigns default value 01/01/0001 00:00:00
@@ -298,24 +322,24 @@ namespace C__Syntax2
 
             DateTime dtToday = new DateTime(2025, 3, 7);
 
-            //assigns year, month, day, hour, min, seconds
-            DateTime dt3 = new DateTime(2025, 3, 7, 12, 43, 00);
+            //assigns                   year, month, day, hour, min, seconds
+            DateTime dt3 = new DateTime(2025,   3   , 7,   12,   43,  00);
 
 
             //assigns year, month, day, hour, min, seconds, UTC timezone 
             DateTime dt4 = new DateTime(2025, 3, 7, 1, 00, 00, DateTimeKind.Utc);
 
             Console.WriteLine("\n\nDate And Time:");
-            Console.WriteLine("dt1 (default empty constructor): {0}\ndt2 (filled constructer (y,m,d): {1}", dt1, dt2);
-            Console.WriteLine("dtToday (Valide today date): {0}\ndt3 (data & time (y,m,d,H,M,S): {1}", dtToday, dt3);
-            Console.WriteLine("dt4 (date & time (y,m,d, H,M,S,DateTimeKind(Local,Utc,Unspecified): {0}", dt4);
+            Console.WriteLine($"dt1 (default empty constructor): {dt1}\ndt2 (filled constructer (y,m,d): {dt2}");
+            Console.WriteLine($"dtToday (Valide today date): {dtToday}\ndt3 (data & time (y,m,d,H,M,S): {dt3}");
+            Console.WriteLine($"dt4 (date & time (y,m,d, H,M,S,DateTimeKind(Local,Utc,Unspecified): {dt4}");
 
 
             // Current Datetime in C#
             //      - you can get the current date time using :
             DateTime CurrentDateTime = new DateTime();
             CurrentDateTime = DateTime.Now;
-            Console.WriteLine("\n\nThe Current 100% Date Time using (DateTime.Now): {0}", CurrentDateTime);
+            Console.WriteLine($"\n\nThe Current Date Time using (DateTime.Now): {CurrentDateTime}");
 
 
 
@@ -324,7 +348,8 @@ namespace C__Syntax2
              * Ticks
              *      - Ticks is a date and time expressed in the number of 100-nanosecond intervals
              *          that have elapsed since January 1, 0001, at 00:00:00.000 in the Gregorian calendar.
-             *      - A single tick represents one hundred nanoseconds or one ten-millionth of a second.
+             *      
+             *      - A single tick represents one hundred nanoseconds (10E(-7)) or one ten-millionth (1E7) of a second.
              *      - There are 10,000 ticks in a millisecond and 10 million ticks in a second.
             */
 
@@ -353,11 +378,11 @@ namespace C__Syntax2
             DateTime minDateTimeValue = DateTime.MinValue;  //  returns min value of DateTime
 
             Console.WriteLine("\n\nStatic Fields of DateTime Struct:\n");
-            Console.WriteLine("Current Date & Time using DateTime.Now: {0}", CurrentDateTime);
-            Console.WriteLine("Today Date using DateTime.Today: {0}", TodaysDate);
-            Console.WriteLine("Current Utc Date using DateTime.UtcNow: {0}", CurrentDtTmUTC);
-            Console.WriteLine("minDateTimeValue: " + minDateTimeValue);
-            Console.WriteLine("maxDateTimeValue: " + maxDateTimeValue);
+            Console.WriteLine($"Current Date & Time using DateTime.Now: {CurrentDateTime}");
+            Console.WriteLine($"Today Date using DateTime.Today: {TodaysDate}");
+            Console.WriteLine($"Current Utc Date using DateTime.UtcNow: {CurrentDtTmUTC}");
+            Console.WriteLine($"minDateTimeValue: {minDateTimeValue}");
+            Console.WriteLine($"maxDateTimeValue: {maxDateTimeValue}");
 
 
 
@@ -374,16 +399,18 @@ namespace C__Syntax2
 
             DateTime ADt = new DateTime(2025, 1, 1);
 
-            // Hours, Minutes, Seconds
-            TimeSpan TmSpan = new TimeSpan(23, 25, 30);
+            // Days, Hours, Minutes, Seconds
+            TimeSpan TmSpan = new TimeSpan(28, 12, 30, 59);
+            //TimeSpan TmSpan = new TimeSpan(12, 30, 59);   // Works ; you can speceify HH:MM:SS without DD
+            //TimeSpan TmSpanNow = TimeSpan(CurrentDtTm);   // Not Exist :(
 
             Console.WriteLine("\n\nTime Spance (TimeSpan) struct:\n");
-            Console.WriteLine("Time Span Printing: {0}", TmSpan);
-            Console.WriteLine("Time Span Days Printing (TmSpan.Days): {0}", TmSpan.Days);
-            Console.WriteLine("Time Span Hours Printing (TmsSpan.Hours): {0}", TmSpan.Hours);
-            Console.WriteLine("Time Span Minutes Printing (TmSpan.Minutes): {0}", TmSpan.Minutes);
-            Console.WriteLine("Time Span Seconds Printing (TmSpan.Seconds): {0}", TmSpan.Seconds);
-            Console.WriteLine("A random DateTime: {0}", ADt);
+            Console.WriteLine($"Time Span Printing: {TmSpan}");
+            Console.WriteLine($"Time Span Days Printing (TmSpan.Days): {TmSpan.Days}");
+            Console.WriteLine($"Time Span Hours Printing (TmsSpan.Hours): {TmSpan.Hours}");
+            Console.WriteLine($"Time Span Minutes Printing (TmSpan.Minutes): {TmSpan.Minutes}");
+            Console.WriteLine($"Time Span Seconds Printing (TmSpan.Seconds): {TmSpan.Seconds}");
+            Console.WriteLine($"A random DateTime: {ADt}");
 
             // - We can use the TimeSpan to be added into the Date:
             //      - This will add time span to the date.
@@ -391,27 +418,28 @@ namespace C__Syntax2
             Console.WriteLine("The new Date after adding a TimeSpan into it as: [DateTime newDate = ADt.Add(TmSpan)] = " + newDate);
 
             DateTime newDate2 = DateTime.Now;
-            Console.WriteLine("A Now DateTime: {0}", newDate2);
+            Console.WriteLine($"A Now DateTime: {newDate2}");
             newDate2 = newDate2.Add(TmSpan);
-            Console.WriteLine("The new Date after adding a TimeSpan into it as: [newDate2 = newDate2.Add(TmSpan): " + newDate);
+            Console.WriteLine("The Now Date after adding a TimeSpan into it as: [newDate2 = newDate2.Add(TmSpan): " + newDate);
 
             /*
              *  - When you add a TimeSpan to a DateTime using Add(), both the time and the date can be affected
              *      if the time exceeds a 24-hour boundary.
-             *  - 
+             *
              *  - The TimeSpan object does not modify the original DateTime instance because DateTime is an immutable struct in C#. 
              *  - When you use Add() with a TimeSpan, it returns a new DateTime object with the added value
-             *       rather than changing the original object.
+             *       rather than changing the original object. (Like strings are Immutable!)
              *  - newDate2 = newDate2.Add(TmSpan);
              *  
              *  - How to properly add TimeSpan without losing the old date:
             */
             DateTime originalDate = new DateTime(2025, 1, 1);
             TimeSpan timeSpan = new TimeSpan(23, 25, 30);
-            Console.WriteLine("\n\nOriginal Date: " + originalDate);
+            Console.WriteLine($"\n\n!!\n\nOriginal Date: {originalDate}");
+            Console.WriteLine($"Time Spane: {timeSpan}");
             DateTime newDate3 = originalDate.Add(timeSpan);
-            Console.WriteLine("After Adding TimeSpan: " + newDate3);
-            Console.WriteLine("Original Date (Unchanged): " + originalDate);
+            Console.WriteLine($"After Adding TimeSpan: new date (hours changed !): {newDate3}");
+            Console.WriteLine($"Original Date (Unchanged): {originalDate}");
 
             DateTime dt = new DateTime(2025, 3, 7, 14, 19, 0); // 3/7/2025 at 2:19 PM
             TimeSpan span = new TimeSpan(3, 0, 0);            // 3 hours
@@ -446,6 +474,10 @@ namespace C__Syntax2
             Console.WriteLine("Date 2 (Subtration is from it):  " + Dt2);
             Console.WriteLine("The Result: " + Result);
 
+            Result = OrignalDt1.Subtract(Dt2);
+            Console.WriteLine("\n(Subtration is from it Orignal date (minimum data):  " + OrignalDt1);
+            Console.WriteLine("The Result: " + Result);
+
 
             DateTime OrignalDt2 = new DateTime(2025, 1, 20, 10, 30, 00);
             DateTime Dt3 = new DateTime(2025, 1, 25, 20, 50, 30);
@@ -454,7 +486,7 @@ namespace C__Syntax2
             Console.WriteLine("\n\nDate Subtraction:\n");
             Console.WriteLine("Original Date: " + OrignalDt2);
             Console.WriteLine("Date 2 (Subtration is from it):  " + Dt3);
-            Console.WriteLine("The Result: " + Result);
+            Console.WriteLine("The Result: " + Result2);
 
 
             /*
@@ -514,6 +546,17 @@ namespace C__Syntax2
             bool isValidDate = DateTime.TryParse(DateStr, out Date1);
 
             Console.WriteLine("\n\nConverting string to DateTime DateTime Functions :)\n");
+            Console.WriteLine($"\nDate is: {DateStr}");
+            if (isValidDate)
+                Console.WriteLine($"This is a valid str: DateTime Variable is: {Date1}");
+            else
+                Console.WriteLine($"{DateStr} isn't a valid date string");
+
+
+            DateStr = "2023/2/24";
+            Console.WriteLine($"\nDate is: {DateStr}");
+            isValidDate = DateTime.TryParse(DateStr, out Date1);
+
             if (isValidDate)
                 Console.WriteLine("This is a valid str: DateTime Variable is: {0}", Date1);
             else
@@ -521,11 +564,10 @@ namespace C__Syntax2
 
 
 
-
             DateStr = "26/2/2023";
+            Console.WriteLine($"\nDate is: {DateStr}");
             isValidDate = DateTime.TryParse(DateStr, out Date1);
 
-            Console.WriteLine("\n");
             if (isValidDate)
                 Console.WriteLine("This is a valid str: DateTime Variable is: {0}", Date1);
             else
@@ -534,11 +576,11 @@ namespace C__Syntax2
 
 
             var Datestr3 = "6/12/2023";
+            Console.WriteLine($"\nDate is: {Datestr3}");
             DateTime dt5;
 
             var isValidDate2 = DateTime.TryParse(Datestr3, out dt5);
 
-            Console.WriteLine("\n");
             if (isValidDate2)
                 Console.WriteLine(dt5);
             else

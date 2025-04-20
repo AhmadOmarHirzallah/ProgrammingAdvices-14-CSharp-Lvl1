@@ -17,6 +17,9 @@ namespace _1st_Application
             InitializeComponent();
         }
 
+        // You can use this for reaching the Form1 explicitly from other forms !
+        //Form1 myForm = new Form1();
+
         private void button1_Click(object sender, EventArgs e)
         {
             textBox2.Text = textBox1.Text;
@@ -130,6 +133,16 @@ namespace _1st_Application
         {
             labelFormHeader.Text = txtFormHeaderAuto.Text;
             labelFormHeader.ForeColor = Color.Blue;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void msgBoxBtn(object sender, EventArgs e)
+        {
+            MessageBox.Show("ahmad", "omar", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button3, MessageBoxOptions.RightAlign);
         }
     }
 }

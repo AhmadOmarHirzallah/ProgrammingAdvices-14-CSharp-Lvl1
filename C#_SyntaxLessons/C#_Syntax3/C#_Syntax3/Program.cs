@@ -62,9 +62,9 @@ namespace C__Syntax3
             return (Num1 + Num2 + Num3);
         }
 
-        static double Sum(int Num1, int Num2, double Num3, double Num4)
+        static double Sum(int Num1, int Num2, double Num3)
         {
-            return (Num1 + Num2 + Num3 + Num4);
+            return (Num1 + Num2 + Num3);
         }
 
 
@@ -92,13 +92,13 @@ namespace C__Syntax3
             Console.WriteLine("\nRetrieving the index 0 of the string: {0}", Name[0]);
             Console.WriteLine("Retrieving the index 2 of the string: {0}", Name[2]);
 
-            Console.WriteLine("\nInserting (Full Name: )  Insert(index, String):\t{0}", Name.Insert(0, "Full Name: "));
+            Console.WriteLine("\nInserting (Full Name: )  Insert(index, String): Result:\t{0}", Name.Insert(0, "Full Name: "));
             Console.WriteLine(Name.Insert(3,"KKKK"));   // - Insert at the index & shift the (current & next) indicies chars
 
-            Console.WriteLine("\nReplace every (a) to (*&) using .Replace (Before str/pattern , After ...):\t{0}", Name.Replace("a", "*&"));
+            Console.WriteLine("\nReplace every (a) to (*&) using .Replace(Before str/pattern , After ...):\t{0}", Name.Replace("a", "*&"));
 
             Console.WriteLine("\nIndexOf(Pattern Or String or Char) - IndexOf:Hirz -> :\t{0}", Name.IndexOf("Hirz")); // 19
-            Console.WriteLine("IndexOf(Pattern Or String or Char) - IndexOf:A -> :\t{0}", Name.IndexOf("A"));   // 0
+            Console.WriteLine("IndexOf(Pattern Or String or Char) - IndexOf:A -> :\t{0}", Name.IndexOf('A'));   // 0
             Console.WriteLine("IndexOf(Pattern Or String or Char) - IndexOf:a -> :\t{0}", Name.IndexOf("a"));   // 0
 
             Console.WriteLine("\nContains:\t{0}", Name.Contains("Omar")); // True
@@ -142,13 +142,14 @@ namespace C__Syntax3
             /*
              *  - String Interpolation (استيفاء ، اقحام ، توليد):
              *      - String interpolation is a better way of concatenating strings.
-             *      - We use + sign to concatenate string variables with static strings.
+             *      - We used before (+ : plus) sign to concatenate string variables with static strings.
              *      - C# 6 includes a special character $ to identify an interpolated string.
              *      - An interpolated string is a mixture of static string and string variable
              *          where string variables should be in {} brackets.
              *          
              *  - By placing a $ before the opening quotation mark, you signal that the string is an interpolated string.
-             *  - This means any code within curly braces {} is evaluated and converted into a string as part of the final value.
+             *  - This means any code within curly braces {} is evaluated and converted into
+             *      a string as part of the final value.
              *  - Why Use String Interpolation?
              *      - Readability: It makes the string construction easier to read than concatenating multiple strings.
              *      - Maintainability: Embedding expressions directly within the string reduces the likelihood of errors
@@ -221,7 +222,7 @@ namespace C__Syntax3
 
             //  Implicit casting is done automatically when passing a smaller size type to a larger size type
             int myInt = 32000;
-            double myDouble = myInt;    //  - Automatic casting: int to double
+            double myDouble = myInt;    //   Automatic casting: int to double
 
             Console.WriteLine("\n\nCasting; Implicit Vs Explicit:\n");
             Console.WriteLine("Integer Value: " + myInt);
@@ -245,12 +246,16 @@ namespace C__Syntax3
             double myDouble3 = 7.25D;
             bool myBool = true;
             Console.WriteLine("\n\nConverting using (Convert.):\n");
+
+            Console.WriteLine($"Boolean is: {myBool}");      // True
             Console.WriteLine("Converting bool ToString: " + Convert.ToString(myBool));      // True
             Console.WriteLine("Converting int ToString: " + Convert.ToString(myInt3));
             Console.WriteLine("Converting double ToString: " + Convert.ToString(myDouble3));
             Console.WriteLine("Converting int ToDouble: " + Convert.ToDouble(myInt3));
             Console.WriteLine("Converting double ToInt32 (int): " + Convert.ToInt32(myDouble3));
 
+            myInt3 = Convert.ToInt32(myInt3);
+            myDouble = Convert.ToDouble(myInt) / myDouble;
 
 
             /*
@@ -287,11 +292,10 @@ namespace C__Syntax3
             Console.Write("Enter username?  "); 
             string UserName = Console.ReadLine();
             Console.WriteLine("\nYour Username is: " + UserName);
-
-             Console.Write("\n\nEnter your age?  ");
+            Console.Write("\n\nEnter your age?  ");
             //if you dont convert you will get error; Becauseif you enter string you will get error
             int ageReading = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("\nThe Entered Age is:  " + ageReading);
+            Console.WriteLine($"\nThe Entered Age + 10 is:  {ageReading + 10}");
 
 
 
@@ -302,11 +306,11 @@ namespace C__Syntax3
 
 
             /*
-             * |= (Bitwise OR Assignment)
-             * ^= (Bitwise XOR Assignment)
-             * >>= (Right Shift Assignment)
-             * <<= (Left Shift Assignment)
-             * => (Lambda Operator)
+             *       |= (Bitwise OR Assignment)
+             *       ^= (Bitwise XOR Assignment)
+             *       >>= (Right Shift Assignment)
+             *       <<= (Left Shift Assignment)
+             *       => (Lambda Operator)
             */
             Console.WriteLine("\n\n=============================================");
             Console.WriteLine(" C# Compound Assignment Operators Visualization");
@@ -526,7 +530,8 @@ namespace C__Syntax3
 
             /*
              * - Switch statement can be used to replace the if...else if statement in C#.
-             * - The advantage of using switch over if...else if statement is the codes will look much cleaner and readable with switch.        - A problem with the switch statement is, when the matching value is found,
+             * - The advantage of using switch over if...else if statement is the codes will look much cleaner and readable with switch.     
+             * - A problem with the switch statement is, when the matching value is found,
              *      it executes all statements after it until the end of switch block.
              * - To avoid this, we use break statement at the end of each case.
              *      - The break statement stops the program from executing non-matching statements 
@@ -641,7 +646,7 @@ namespace C__Syntax3
              *          - we have to allocate memory for the array in C#. For example,
              *              - int[] age = new int[5];
              *                  - new int[5] represents that the array can store 5 elements.
-             *                      We can also say the size/length of the array is 5.
+             *                      We can also say the Length/Size of the array is 5.
             */
             Console.WriteLine("\n\nDefining Arrays in C#:\n");
 
@@ -675,7 +680,7 @@ namespace C__Syntax3
              int[] numbers = { 1, 2, 3 };
 
             //access first element
-            Console.WriteLine("Element in first index : " + numbers[0]);
+            Console.WriteLine("\n\nElement in first index : " + numbers[0]);
             //access second element
             Console.WriteLine("Element in second index : " + numbers[1]);
             //access third element
@@ -722,10 +727,13 @@ namespace C__Syntax3
             Console.WriteLine("\n\nUsing the foreach loop;; printing array of chars of my name:\n");
             char[] CharsArray = new char[5] { 'A', 'h', 'm', 'a', 'd' } ;
             foreach (char anChar in CharsArray)
-                Console.Write(anChar);
+                if (anChar is char)
+                    Console.Write(anChar);
 
 
             Console.WriteLine("\n\nforeach loop;; printing array of chars processing an array of gender :\n");
+            // Error : Wrng Index (Compiler Error)
+            //char[] Genders = new char[9] { 'm', 'f', 'm', 'm', 'm', 'f', 'f', 'm', 'm', 'f' };
             char[] Genders = new char[10] { 'm', 'f', 'm', 'm', 'm', 'f', 'f', 'm', 'm', 'f' };
             int malesCount = 0, femalesCount = 0;
 
@@ -746,7 +754,15 @@ namespace C__Syntax3
 
 
             /*
-             *  - Array Operations using System.Linq
+             *  - Array Operations using System.Linq 
+             *  - Linq means : Language Integrated Query
+             *  
+             *  - LINQ lets you query data using C# syntax,
+             *  directly in your code, as if you're writing 
+             *  SQL-style queries inside the programming language.
+             *  It integrates querying capabilities into C# (or VB.NET) in a natural,
+             *  type-safe, and compile-time-checked way.
+             *  
              *      - In C#, we have the System.Linq namespace that provides 
              *          different methods to perform various operations in an array.
             */
@@ -762,6 +778,7 @@ namespace C__Syntax3
 
             // Return the Count
             Console.WriteLine("The Count of elements in the array:\t{0}", ArrayOfNbrs.Count());
+            Console.WriteLine($"The Lenth of the array:\t{ArrayOfNbrs.Length}");
 
             // Compute elements summation
             Console.WriteLine("The summation of the numbers:\t{0}", ArrayOfNbrs.Sum());
@@ -795,6 +812,7 @@ namespace C__Syntax3
             Console.WriteLine("Round of 9.99: {0}", Math.Round(9.99));
             Console.WriteLine("Ceiling of 9.99: {0}", Math.Ceiling(9.99));
             Console.WriteLine("Floor of 9.99: {0}", Math.Floor(9.99));
+            Console.WriteLine("Power of (9.99, 2): {0}", Math.Pow(9.99, 2));
 
 
 
@@ -814,12 +832,15 @@ namespace C__Syntax3
              *      - Parameters act as variables inside the method.
              *      - They are specified after the method name, inside the parentheses.
              *      - You can add as many parameters as you want, just separate them with a comma.
+
              *      - Default Parameter Value
              *          - You can also use a default parameter value, by using the equals sign (=).
+
              *      - If you want the method to return a value, you can use a primitive data type;
              *          (such as int or double) instead of void, and use the return keyword inside the method.
+
              *      - C# Named Arguments:
-             *          - It is also possible to send arguments with the key: value syntax.
+             *          - It is also possible to send arguments with the (key: value) syntax.
              *          - That way, the order of the arguments does not matter.
              *          - Reordering: If you want to pass arguments in a different order than the method’s parameter list,
              *              you must specify each parameter name exactly as it appears in the method definition
@@ -842,8 +863,8 @@ namespace C__Syntax3
             Console.WriteLine("\nAnother Method with default parameter value:\n");
             anName = "Ahmad Hirzallah";
             PrintClientInfo(anName, 25, "Amman/Jordan");
-            PrintClientInfo(anName, 25);        // Will take the default value of the function's parameter.
-            PrintClientInfo(anName, 25, null);  // will print empty string "" as address; In address nothing will be displayed.
+            PrintClientInfo(anName, 25);        // Will take the default value of the function's Address parameter.
+            PrintClientInfo(anName, 25, null);  // Will print empty string "" as address instead of Null; In address nothing will be displayed.
 
 
             Console.WriteLine("\nAnother Method with return type (Not void):\n");
@@ -872,7 +893,7 @@ namespace C__Syntax3
             Console.WriteLine("\n\nC# Overloading of Methods/Functions:\n");
             Console.WriteLine(Sum(10, 20));
             Console.WriteLine(Sum(10, 20,30));
-            Console.WriteLine(Sum(10, 20, 30.383D , 40.94181243D));
+            Console.WriteLine(Sum(10, 20, 30.383D));
 
 
 
@@ -888,7 +909,8 @@ namespace C__Syntax3
              *      - When an error occurs, C# will normally stop and generate an error message.
              *          - The technical term for this is: C# will throw an exception (throw an error).
              *  - C# try and catch
-             *      - The try statement allows you to define a block of code to be tested for errors while it is being executed.
+             *      - The try statement allows you to define a block of code to be tested for errors
+             *          while it is being executed.
              *      
              *      - The catch statement allows you to define a block of code to be executed; 
              *          only if an error occurs in the try block.

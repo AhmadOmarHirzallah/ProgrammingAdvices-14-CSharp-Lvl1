@@ -97,14 +97,18 @@ namespace C__Syntax1
 
             Console.WriteLine("\n\n\nImplicitly type variables (With var Keyword):");
             Console.WriteLine("var1 = {0},\tvar2 = {1},\tvar3 = {2}\n\n", var1, var2, var3);
+            //var3 = 5;     // Error: Different Types !
+            var3 = "Ahmad"; // This Works as it same type !
 
 
             /*
              * Datatypes in C#:
              *  1. Value Types: Variables stores values inside it; 
-             *      - Integrals as: sbyte (means signed byte) - byte - 
-             *          short - ushort (means unsigned short) 
-             *          - int - uint - long - ulong
+             *      - Integrals as: 
+             *          sbyte (means signed byte -128 -> 128) ---- byte (0 -> 255) -
+             *          short ----  ushort (means unsigned short) 
+             *          int ----  uint 
+             *          long ---- ulong
              *      
              *      - Characters: char
              *      
@@ -112,7 +116,7 @@ namespace C__Syntax1
              *      
              *      - Decimal : decimal (like float and double but bigger and more accurate)
              *      
-             *      - Boolean : bool
+             *      - Booleans(true false) type is: bool
              *      
              *      - Enum Types, Struct Types, Nullable Types
              *  
@@ -137,7 +141,7 @@ namespace C__Syntax1
                 Console.WriteLine("Both Datatypes are the same (int = System.Int32)!");
 
 
-            long Nbr2 = 1;
+            long Nbr2 = 1012393129;
             System.Int64 asNbr2 = 1012393129;
             if (Nbr2 == asNbr2)
                 Console.WriteLine("Both Datatypes are the same (long = System.Int64)!");
@@ -174,7 +178,7 @@ namespace C__Syntax1
             ulong myUnsignedLong = 1238128381328123132ul;
             float myFloat = 182381123124.124f;
             double myDouble = 1283128381328123812.12372174d;
-            decimal myDecimal = 12345678901234567890m; // 20 digit only :)
+            decimal myDecimal = 12345678901234567890m; // 20 digit maximum :)
             char myCharacter = 'Z';
             bool myBool = true;
             string myString = "Ahmad is the Strongest";
@@ -185,15 +189,17 @@ namespace C__Syntax1
             //Byte
 
             byte b1 = 255;
-            //  byte b2 = -128;// compile-time error: Constant value '-128' cannot be converted to a 'byte'
+            //  byte b2 = -128;// compile-time error bec. it is unsigned! -> Constant value '-128' cannot be converted to a 'byte'
             sbyte sb1 = -128;
             sbyte sb2 = 127;
             Console.WriteLine("\nByte:");
             Console.WriteLine("Min={0} , Max={1}", Byte.MinValue, Byte.MaxValue);
+            Console.WriteLine("Min={0} , Max={1}", byte.MinValue, byte.MaxValue);
 
 
             Console.WriteLine("\nSByte:");
             Console.WriteLine("Min={0} , Max={1}", SByte.MinValue, SByte.MaxValue);
+            Console.WriteLine("Min={0} , Max={1}", sbyte.MinValue, sbyte.MaxValue);
 
             //Short
             short s1 = -32768;
@@ -219,9 +225,11 @@ namespace C__Syntax1
 
             Console.WriteLine("\nInt:");
             Console.WriteLine("Min={0} , Max={1}", Int32.MinValue, Int32.MaxValue);
+            Console.WriteLine("Min={0} , Max={1}", int.MinValue, int.MaxValue);
 
             Console.WriteLine("\nUInt:");
             Console.WriteLine("Min={0} , Max={1}", UInt32.MinValue, UInt32.MaxValue);
+            Console.WriteLine("Min={0} , Max={1}", uint.MinValue, uint.MaxValue);
 
             //Long
             long l1 = -9223372036854775808;
@@ -232,9 +240,11 @@ namespace C__Syntax1
 
             Console.WriteLine("\nLong:");
             Console.WriteLine("Min={0} , Max={1}", Int64.MinValue, Int64.MaxValue);
+            Console.WriteLine("Min={0} , Max={1}", long.MinValue, long.MaxValue);
 
             Console.WriteLine("\nULong:");
             Console.WriteLine("Min={0} , Max={1}", UInt64.MinValue, UInt64.MaxValue);
+            Console.WriteLine("Min={0} , Max={1}", ulong.MinValue, ulong.MaxValue);
 
 
             //Float
@@ -243,7 +253,7 @@ namespace C__Syntax1
 
             Console.WriteLine("\nFloat:");
             Console.WriteLine("Min={0} , Max={1}", Single.MinValue, Single.MaxValue);
-            //Console.WriteLine("Min={0} , Max={1}", float.MinValue, float.MaxValue);
+            Console.WriteLine("Min={0} , Max={1}", float.MinValue, float.MaxValue);
 
 
             //double
@@ -252,7 +262,7 @@ namespace C__Syntax1
 
             Console.WriteLine("\nDouble:");
             Console.WriteLine("Min={0} , Max={1}", Double.MinValue, System.Double.MaxValue);
-            //Console.WriteLine("Min={0} , Max={1}", double.MinValue, double.MaxValue);
+            Console.WriteLine("Min={0} , Max={1}", double.MinValue, double.MaxValue);
 
 
 
@@ -264,8 +274,8 @@ namespace C__Syntax1
             decimal d4 = 1.1234567891345679123456789123m;
 
             Console.WriteLine("\nDecimal:");
-            Console.WriteLine("Min={0} , Max={1}", System.Decimal.MinValue, System.Decimal.MaxValue);
-            //Console.WriteLine("Min={0} , Max={1}", decimal.MinValue, decimal.MaxValue);
+            Console.WriteLine("Min= {0} , Max= {1}", System.Decimal.MinValue, System.Decimal.MaxValue);
+            Console.WriteLine("Min= {0} , Max= {1}", decimal.MinValue, decimal.MaxValue);
 
 
             //Scientific Notation
@@ -273,17 +283,19 @@ namespace C__Syntax1
             //as exponent part of scientific notation with float, double or decimal.
             double d = 0.12e2d;
             Console.WriteLine("\n\n{0} is written as 0.12e2 ; e2 = 10 ^ 2 ", d);  // 12;
+            d = 0.12E2D;
+            Console.WriteLine("{0} is written as 0.12E2 ; e2 = 10 ^ 2 ", d);  // 12;
 
             float f = 123.45e-2f;
             Console.WriteLine("123.45e-2f is equal: {0}", f);  // 1.2345
 
             decimal m = 1.2e6m;
-            Console.WriteLine("1.2e6m is equal: {0}", m);  // 1.2345
+            Console.WriteLine("1.2e6m is equal: {0}", m);  // 1200000 
             Console.WriteLine(m);// 1200000
 
             double e_try = 1e5;
             Console.WriteLine("1e5 = {0}", e_try);
-            e_try = 1e-5d;
+            e_try = 1E-05d;
             Console.WriteLine("1e-5 = {0}", e_try);
             e_try = 12345e-2d;
             Console.WriteLine("12345e-2d = {0}", e_try);
